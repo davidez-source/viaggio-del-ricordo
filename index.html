@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231a2744'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23c9a84c'>R</text></svg>">
+<!-- Meta tag SEO e condivisione -->
+<meta name="description" content="Progetto didattico della classe 3E sul viaggio del ricordo: l'esodo giuliano dalmata, la storia di Zara e la memoria del confine orientale italiano." />
+<meta name="author" content="Classe 3E — coordinato dalla prof.ssa Ada Barbara Pierotti" />
+<meta name="keywords" content="esodo giuliano dalmata, Zara, foibe, giorno del ricordo, confine orientale, Istria, Dalmazia" />
+
+<!-- Open Graph (anteprima su WhatsApp, email, social) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Il Nostro Viaggio del Ricordo — L'Esodo Giuliano Dalmata" />
+<meta property="og:description" content="Progetto didattico della classe 3E: storia, memoria e identità tra Zara, Trieste e Fiume. Giorno del Ricordo 10 febbraio." />
+<meta property="og:locale" content="it_IT" />
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Il Nostro Viaggio del Ricordo" />
+<meta name="twitter:description" content="Progetto didattico sull'esodo giuliano dalmata — Classe 3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Nostro Viaggio del Ricordo — L'Esodo Giuliano Dalmata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM — IL VIAGGIO DEL RICORDO
+       ============================================================ */
+    :root {
+      --navy:      #1a2744;
+      --navy-mid:  #243459;
+      --navy-lt:   #2e4070;
+      --cream:     #f4ede0;
+      --cream-dark:#e8dcc8;
+      --crimson:   #8b1a1a;
+      --crimson-lt:#b52929;
+      --gold:      #c9a84c;
+      --gold-lt:   #e3c878;
+      --text-dark: #1a1a1a;
+      --text-mid:  #3c3a38;
+      --text-lt:   #7a7268;
+      --white:     #ffffff;
+      --shadow-sm: 0 2px 12px rgba(26,39,68,0.12);
+      --shadow-md: 0 8px 32px rgba(26,39,68,0.18);
+      --shadow-lg: 0 20px 60px rgba(26,39,68,0.24);
+      --radius:    10px;
+      --nav-h:     68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: var(--cream-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 4px; }
+
+    /* ── UTILITY ── */
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .container-narrow { max-width: 820px; margin: 0 auto; padding: 0 28px; }
+
+    /* ============================================================
+       NAVIGATION
+       ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(26, 39, 68, 0.97);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-brand span { color: var(--white); font-weight: 300; }
+
+    /* Hamburger + dropdown */
+    .nav-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background: none;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 6px;
+      padding: 8px 14px;
+      color: var(--gold);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .nav-toggle:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+    .nav-toggle .bars { display: flex; flex-direction: column; gap: 4px; }
+    .nav-toggle .bars span {
+      display: block;
+      width: 18px; height: 1.5px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: transform 0.3s;
+    }
+
+    #nav-menu {
+      position: absolute;
+      top: var(--nav-h);
+      right: 0;
+      width: 300px;
+      background: var(--navy);
+      border-left: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      display: none;
+      flex-direction: column;
+      padding: 16px 0;
+      box-shadow: var(--shadow-lg);
+    }
+    #nav-menu.open { display: flex; }
+
+    #nav-menu a {
+      display: block;
+      padding: 12px 28px;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+    }
+    #nav-menu a:hover {
+      color: var(--gold);
+      border-left-color: var(--gold);
+      padding-left: 34px;
+    }
+    #nav-menu .nav-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 28px;
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(16,28,58,0.88) 0%, rgba(20,34,65,0.76) 60%, rgba(26,39,68,0.92) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><defs><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="400" height="300" filter="url(%23n)" opacity="0.08"/></svg>');
+      background-color: var(--navy);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 40px) 28px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139,26,26,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Animated decorative lines */
+    #hero::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+      width: 700px; height: 700px;
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse-ring 6s ease-in-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; }
+      50% { transform: translate(-50%,-50%) scale(1.06); opacity: 0.12; }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+    }
+
+    #hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s ease forwards;
+    }
+    #hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s ease forwards;
+    }
+
+    .hero-ornament {
+      width: 60px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s ease forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.1s ease forwards;
+    }
+    .hero-meta-item {
+      text-align: center;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .hero-meta-item strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.9);
+      font-family: 'Crimson Pro', serif;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 3px;
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: fadeIn 1.5s 1.5s ease forwards;
+      opacity: 0;
+    }
+    .scroll-cue::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(201,168,76,0.5), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ============================================================
+       SECTION WRAPPERS
+       ============================================================ */
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    section.dark-section {
+      background: var(--navy);
+      color: var(--white);
+    }
+    section.dark-section .section-label { color: var(--gold); }
+    section.dark-section h2 { color: var(--white); }
+    section.dark-section p, section.dark-section li { color: rgba(255,255,255,0.82); }
+
+    section.cream-section { background: var(--cream); }
+    section.cream-dark-section { background: var(--cream-dark); }
+
+    h2.section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    h2.section-title em { font-style: italic; color: var(--gold); }
+
+    .section-intro {
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      max-width: 660px;
+      margin-bottom: 50px;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px 0 36px;
+    }
+
+    /* ============================================================
+       SECTION 1 — ESODO GIULIANO DALMATA (Introduzione)
+       ============================================================ */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    @media(max-width: 720px){ .intro-grid { grid-template-columns: 1fr; } }
+
+    .intro-text-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .intro-text-block p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+
+    /* Stats band */
+    .stats-band {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+    @media(max-width: 620px){ .stats-band { grid-template-columns: 1fr; } }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Carousel */
+.carousel-wrapper {
+  position: relative;
+  margin: 32px 0;
+}
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--cream-dark);
+  cursor: grab;
+}
+.carousel:active {
+  cursor: grabbing;
+}
+.carousel::-webkit-scrollbar {
+  height: 6px;
+  display: block;
+}
+.carousel::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+  border-radius: 4px;
+  display: block;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-lt);
+}
+
+    .carousel-item {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      background: var(--cream-dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .carousel-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-lt);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .carousel-caption {
+      padding: 12px 14px;
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* Link cards */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .link-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .link-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+    .link-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .link-card-text strong {
+      display: block;
+      font-size: 0.92rem;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .link-card-text span {
+      font-size: 0.82rem;
+      color: var(--text-lt);
+    }
+
+    /* ============================================================
+       SECTION 2 — STORIA DI ZARA (Timeline unificata)
+       ============================================================ */
+    .zara-intro-block {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 50px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+    @media(max-width: 820px){ .zara-intro-block { grid-template-columns: 1fr; } }
+
+    .zara-pullquote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      background: rgba(201,168,76,0.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--navy);
+    }
+    .zara-pullquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      font-style: normal;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 0.1em;
+      color: var(--text-lt);
+      text-transform: uppercase;
+    }
+
+    /* Unified timeline */
+    .master-timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .era-block {
+      margin-bottom: 60px;
+    }
+
+    .era-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 28px;
+      cursor: pointer;
+    }
+    .era-badge {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.2;
+      border: 2px solid;
+      transition: transform 0.2s;
+    }
+    .era-header:hover .era-badge { transform: scale(1.08); }
+
+    .era-badge.veneziana { background: rgba(31,79,123,0.1); border-color: #1f4f7b; color: #1f4f7b; }
+    .era-badge.asburgica { background: rgba(101,67,33,0.1); border-color: #7b5c2a; color: #7b5c2a; }
+    .era-badge.novecento { background: rgba(139,26,26,0.1); border-color: var(--crimson); color: var(--crimson); }
+    .era-badge.guerra    { background: rgba(26,39,68,0.12); border-color: var(--navy); color: var(--navy); }
+    .era-badge.origini { background: rgba(70, 100, 60, 0.12); border-color: #4a6b3a; color: #3a5530;
+}
+
+    .era-title-group h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .era-title-group .era-years {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .era-toggle-icon {
+      margin-left: auto;
+      width: 28px; height: 28px;
+      border: 1px solid var(--cream-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-lt);
+      font-size: 1rem;
+      transition: transform 0.3s, background 0.2s;
+    }
+    .era-header.active .era-toggle-icon { transform: rotate(180deg); background: var(--cream-dark); }
+
+    .era-content {
+      display: none;
+      padding-left: 0;
+      border-left: 3px solid var(--cream-dark);
+      margin-left: 27px;
+    }
+    .era-content.open { display: block; }
+
+    /* Events inside each era */
+    .era-event {
+      position: relative;
+      padding: 0 0 28px 28px;
+    }
+    .era-event::before {
+      content: '';
+      position: absolute;
+      left: -6px; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--cream-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .era-event:hover::before { border-color: var(--gold); background: var(--gold); }
+
+    .era-event-date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .era-event h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .era-event p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* Caratteri cards (Venezia section) */
+    .caratteri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media(max-width: 620px){ .caratteri-grid { grid-template-columns: 1fr; } }
+    .car-card {
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
+      padding: 16px;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .car-card h5 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .car-card p { font-size: 0.9rem; color: var(--text-mid); }
+
+    /* ============================================================
+       SECTION 3 — IL VIAGGIO
+       ============================================================ */
+    .trip-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+    @media(max-width: 720px){ .trip-intro { grid-template-columns: 1fr; } }
+
+    .trip-map-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--white);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .trip-map-link:hover { background: rgba(201,168,76,0.22); border-color: var(--gold); }
+    .map-icon-wrap {
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .trip-map-link strong { display: block; font-size: 0.92rem; font-family: 'Josefin Sans', sans-serif; letter-spacing: 0.06em; margin-bottom: 3px; }
+    .trip-map-link span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+
+    /* Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .step-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 22px;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,168,76,0.5);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.35);
+      position: absolute;
+      top: 14px; right: 18px;
+      line-height: 1;
+    }
+    .step-city {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .step-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .step-card p { font-size: 0.9rem; color: rgba(255,255,255,0.68); line-height: 1.6; }
+
+    /* Trip photo carousel */
+    .trip-carousel-wrap {
+      margin-top: 50px;
+    }
+    .trip-carousel-wrap h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+    .photo-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(255,255,255,0.1);
+  cursor: grab;
+}
+.photo-carousel:active {
+  cursor: grabbing;
+}
+.photo-carousel::-webkit-scrollbar { height: 6px; }
+.photo-carousel::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+}
+.photo-carousel::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+    .photo-slot {
+      flex: 0 0 300px;
+      height: 200px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px dashed rgba(255,255,255,0.2);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-slot img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+    .photo-slot:hover { border-color: rgba(201,168,76,0.4); color: rgba(255,255,255,0.5); }
+    .photo-slot-icon { font-size: 1.5rem; }
+
+    /* ============================================================
+       SECTION 4 — RIFLESSIONI & PRODOTTI
+       ============================================================ */
+    .reflections-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    @media(max-width: 720px){ .reflections-grid { grid-template-columns: 1fr; } }
+
+    .reflection-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border-top: 4px solid;
+      box-shadow: var(--shadow-sm);
+    }
+    .reflection-card.card-crimson { border-top-color: var(--crimson); }
+    .reflection-card.card-navy { border-top-color: var(--navy); }
+    .reflection-card.card-gold { border-top-color: var(--gold); }
+
+    .reflection-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .reflection-card p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* Podcast embed */
+    .podcast-embed {
+      background: #191414;
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 32px;
+      box-shadow: var(--shadow-md);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s;
+    }
+    .podcast-embed:hover { transform: translateY(-3px); }
+    .spotify-logo {
+      width: 52px; height: 52px;
+      background: #1db954;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .podcast-info strong {
+      display: block;
+      color: var(--white);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .podcast-info span { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+    .podcast-badge {
+      margin-left: auto;
+      background: #1db954;
+      color: #000;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Newspaper screenshots */
+    .newspaper-section {
+      margin-top: 50px;
+    }
+    .newspaper-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .newspaper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .newspaper-slot {
+      aspect-ratio: 3/4;
+      background: var(--cream-dark);
+      border-radius: var(--radius);
+      border: 1px dashed rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--text-lt);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      position: relative;
+    }
+    .newspaper-slot img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+    .newspaper-slot:hover { border-color: var(--navy); box-shadow: var(--shadow-sm); }
+    .newspaper-slot-icon { font-size: 2rem; opacity: 0.95; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    #footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 60px 0 40px;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+    @media(max-width: 720px){ .footer-inner { grid-template-columns: 1fr; } }
+
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .footer-col p, .footer-col li {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      list-style: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-gold { color: var(--gold); font-weight: 300; }
+
+    /* ============================================================
+       RESPONSIVE MISC
+       ============================================================ */
+    @media(max-width: 640px){
+      #navbar { padding: 0 18px; }
+      section { padding: 60px 0; }
+      .stats-band { padding: 28px 20px; }
+    }
+    /* Scrollbar custom sempre visibile */
+.custom-scroll-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.custom-scroll-track {
+  height: 6px;
+  background: var(--cream-dark);
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+/* Versione scura per il carosello foto (sfondo navy) */
+.dark-section .custom-scroll-track {
+  background: rgba(255,255,255,0.12);
+}
+.custom-scroll-thumb {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px;
+  cursor: grab;
+  transition: background 0.2s;
+  min-width: 40px;
+}
+.custom-scroll-thumb:hover,
+.custom-scroll-thumb:active {
+  background: var(--gold-lt);
+  cursor: grabbing;
+}
+/* Nasconde la scrollbar nativa (la custom la sostituisce) */
+.carousel,
+.photo-carousel {
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar,
+.photo-carousel::-webkit-webkit-scrollbar {
+  display: none;
+}
+
+/* Articolo giornale orizzontale */
+.newspaper-article-main {
+  width: 100%;
+  margin-bottom: 6px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--cream-dark);
+}
+.newspaper-article-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.newspaper-article-caption {
+  background: var(--navy);
+  color: rgba(255,255,255,0.75);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  margin: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* Blocco mappa interattiva */
+.map-interactive-block {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.map-interactive-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.map-interactive-header p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.map-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.map-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  min-width: 120px;
+}
+.map-btn:hover {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.map-btn-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.map-btn-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+}
+.map-btn-highlight {
+  border-color: var(--crimson-lt);
+  background: rgba(139,26,26,0.18);
+}
+.map-btn-highlight .map-btn-year { color: #e87070; }
+.map-btn-highlight:hover { border-color: #e87070; background: rgba(139,26,26,0.28); }
+.map-credit {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 6px;
+}
+/* ── Splash screen ── */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+#splash.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+#splash-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  animation: splashFadeUp 0.7s 0.3s ease forwards;
+}
+#splash-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  margin: 0;
+  opacity: 0;
+  animation: splashFadeUp 0.7s 0.6s ease forwards;
+}
+#splash-title em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+#splash-sub {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  opacity: 0;
+  animation: splashFadeUp 0.7s 0.9s ease forwards;
+}
+#splash-line {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  animation: splashLine 0.8s 1.1s ease forwards;
+}
+@keyframes splashFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes splashLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 80px; opacity: 1; }
+}
+  /* ── Glossario ── */
+.glos-hint-main {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-lt);
+  margin-bottom: 40px;
+}
+.glos-group { margin-bottom: 50px; }
+.glos-group-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--cream-dark);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.glos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.glos-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  border: 1px solid var(--cream-dark);
+  border-left: 4px solid;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.glos-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.glos-card:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.glos-blue  { border-left-color: var(--navy); }
+.glos-gold  { border-left-color: var(--gold); }
+.glos-crimson { border-left-color: var(--crimson); }
+.glos-term {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.glos-etimo {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-lt);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+.glos-def {
+  display: none;
+  border-top: 1px solid var(--cream-dark);
+  margin-top: 14px;
+  padding-top: 14px;
+}
+.glos-card.open .glos-def { display: block; }
+.glos-def p {
+  font-size: 0.94rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.glos-def p:last-of-type { margin-bottom: 0; }
+.glos-ref {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+  </style>
+</head>
+<body>
+<!-- Splash screen -->
+<div id="splash">
+  <div id="splash-inner">
+    <div id="splash-label">Classe 3E — Giorno del Ricordo</div>
+    <h1 id="splash-title">Il Nostro<br><em>Viaggio del Ricordo</em></h1>
+    <div id="splash-sub">L'esodo giuliano dalmata — Storia, Memoria e Identità</div>
+    <div id="splash-line"></div>
+  </div>
+</div>
+
+<!-- ================================================================
+     NAVIGATION
+     ================================================================ -->
+<nav id="navbar" role="navigation" aria-label="Navigazione principale">
+  <a class="nav-brand" href="#hero">
+    Viaggio del <span>Ricordo</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav-menu">
+    <div class="bars"><span></span><span></span><span></span></div>
+    Sezioni
+  </button>
+  <div id="nav-menu" role="menu">
+    <a href="#esodo" role="menuitem">① L'Esodo Giuliano Dalmata</a>
+    <div class="nav-divider"></div>
+    <a href="#zara-storia" role="menuitem">② La Storia di Zara</a>
+    <div class="nav-divider"></div>
+    <a href="#viaggio" role="menuitem">③ Il Nostro Viaggio</a>
+    <div class="nav-divider"></div>
+    <a href="#riflessioni" role="menuitem">④ Riflessioni e Prodotti</a>
+    <div class="nav-divider"></div>
+    <a href="#glossario" role="menuitem">⑤ Glossario</a>
+    <div class="nav-divider"></div>
+    <a href="#footer" role="menuitem">⑥ Crediti</a>
+  </div>
+</nav>
+
+<!-- ================================================================
+     HERO
+     ================================================================ -->
+<section id="hero" aria-labelledby="hero-title">
+  <p class="hero-eyebrow">Classe 3E — Anno Scolastico 2025/26</p>
+  <h1 id="hero-title">Il Nostro<br><em>Viaggio del Ricordo</em></h1>
+  <p class="hero-subtitle">L'esodo giuliano dalmata — Storia, Memoria e Identità</p>
+  <div class="hero-ornament"></div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <strong>Mestre → Zara</strong>
+      itinerario
+    </div>
+    <div class="hero-meta-item">
+      <strong>10 Febbraio</strong>
+      Giorno del Ricordo
+    </div>
+    <div class="hero-meta-item">
+      <strong>8 Tappe</strong>
+      luoghi visitati
+    </div>
+    <div class="hero-meta-item">
+      <strong>Classe 3E</strong>
+      Liceo classico Jacopo Stellini
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scopri</div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 1 — ESODO GIULIANO DALMATA
+     ================================================================ -->
+<section id="esodo" class="cream-section" aria-labelledby="esodo-title">
+  <div class="container">
+    <span class="section-label">Introduzione storica</span>
+    <h2 class="section-title" id="esodo-title">L'Esodo<br><em>Giuliano Dalmata</em></h2>
+    <div class="gold-rule"></div>
+
+    <div class="intro-grid">
+      <div class="intro-text-block">
+        <h3>Una delle più grandi tragedie del Novecento</h3>
+        <p>
+          Tra il 1943 e gli anni Sessanta, circa 350.000 cittadini italiani della Venezia Giulia, dell'Istria, di Fiume e della Dalmazia furono costretti ad abbandonare le proprie case, i propri luoghi, la propria identità. Questo fenomeno, noto come l'<em>esodo giuliano dalmata</em>, rappresenta una delle pagine più complesse e a lungo silenziose della storia italiana del dopoguerra.
+        </p>
+        <p style="margin-top:14px;">
+          Le cause risiedono nella ridefinizione dei confini seguita alla Seconda guerra mondiale: il Trattato di Parigi del 1947 e poi il Memorandum di Londra del 1954 assegnarono all'allora Jugoslavia di Tito i territori dell'Istria e della Dalmazia, dove vivevano comunità italiane radicate da secoli. La scelta tra restare — spesso in condizioni di paura e discriminazione — o partire si impose con drammatica urgenza.
+        </p>
+      </div>
+      <div class="intro-text-block">
+        <h3>Le foibe e il 10 Febbraio</h3>
+        <p>
+          Parallelamente all'esodo si consumò la tragedia delle foibe: migliaia di italiani (e di anti-comunisti locali) furono massacrati dalle forze partigiane jugoslave di Tito e gettati in cavità naturali carsiche, le <em>foibe</em>, tra il 1943 e il 1945.
+        </p>
+        <p style="margin-top:14px;">
+          Dal 2004 la legge italiana istituisce il <strong>10 Febbraio</strong> come Giorno del Ricordo, in memoria delle vittime delle foibe e degli esuli istriano-dalmati. Una ricorrenza per non dimenticare, per comprendere e per tramandare una memoria che per decenni era rimasta ai margini del discorso pubblico.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats band -->
+    <div class="stats-band" role="region" aria-label="Dati storici sull'esodo">
+      <div class="stat-item">
+        <span class="stat-num">~350.000</span>
+        <span class="stat-label">esuli giuliano dalmati</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1943–'64</span>
+        <span class="stat-label">anni dell'esodo</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10 Feb</span>
+        <span class="stat-label">Giorno del Ricordo</span>
+      </div>
+    </div>
+
+    <!-- Image carousel -->
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--navy); margin-bottom:16px; margin-top:40px;">
+      Immagini storiche
+    </h3>
+    <div class="carousel" role="list" aria-label="Carosello immagini storiche sull'esodo">
+      <!-- Aggiungi le tue immagini sostituendo src="#" e la didascalia -->
+      <div class="carousel-item" role="listitem">
+        <div class="carousel-img"><img src="Toscana_pola.jpg" /></div>
+        <p class="carousel-caption">La nave Toscana durante l'abbandono di Pola (1947)</p>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="carousel-img"><img src="zara_bombardata.jpg"/></div>
+        <p class="carousel-caption">Veduta di Zara distrutta dai bombardamenti (Molo di Riva Nuova)</p>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="carousel-img"><img src="esule_tricolore.png"/></div>
+        <p class="carousel-caption">Una giovane esule italiana in fuga trasporta, insieme ai propri effetti personali, una bandiera tricolore (1945)</p>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="carousel-img"><img src=""/></div>
+        <p class="carousel-caption">Didascalia immagine storica 4</p>
+      </div>
+      <div class="carousel-item" role="listitem">
+        <div class="carousel-img"><img src=""/></div>
+        <p class="carousel-caption">Didascalia immagine storica 4</p>
+      </div>
+    </div>
+
+    <!-- Link resources -->
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--navy); margin-bottom:16px; margin-top:44px;">
+      Risorse e approfondimenti
+    </h3>
+    <div class="link-grid" role="list">
+      <!-- Sostituisci href="#" con gli URL reali -->
+      <a href="https://www.raiplay.it/video/2021/02/Passato-e-Presente---Foibe-una-violenza-senza-confini-71d01616-2f8a-43e6-a8d2-5d3e961e49ed.html" class="link-card" role="listitem" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:rgba(255,0,0,0.1);">📺</div>
+        <div class="link-card-text">
+          <strong>Foibe. Una violenza senza confini</strong>
+          <span>Passato e Presente - condotto da Paolo Mieli, ospite Raoul Pupo</span>
+        </div>
+      </a>
+      <a href="https://www.raiplay.it/programmi/lodisseagiuliano-dalmatadallefoibeallesodo" class="link-card" role="listitem" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:rgba(255,0,0,0.1);">📺</div>
+        <div class="link-card-text">
+          <strong>L'odissea giuliano-dalmata: dalle foibe all'esodo</strong>
+          <span>Documentario - Rai Cultura</span>
+        </div>
+      </a>
+      <a href="#" class="link-card" role="listitem" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:rgba(26,39,68,0.1);">📚</div>
+        <div class="link-card-text">
+          <strong>Ricerca storica</strong>
+          <span>Inserisci fonte — es. IRCI Trieste, Anvgd</span>
+        </div>
+      </a>
+      <a href="https://www.senato.it/documenti/repository/eventi/dicembre2004/fscommand/Elenco%20leggi/092.pdf" class="link-card" role="listitem" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:rgba(201,168,76,0.12);">🔗</div>
+        <div class="link-card-text">
+          <strong>Legge del 30 marzo del 2004 n. 92</strong>
+          <span>Istituzione del Giorno del ricordo</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 2 — STORIA DI ZARA (Timeline unificata)
+     ================================================================ -->
+<section id="zara-storia" class="cream-dark-section" aria-labelledby="zara-title">
+  <div class="container">
+    <span class="section-label">Approfondimento storico</span>
+    <h2 class="section-title" id="zara-title">La Storia di<br><em>Zara</em></h2>
+    <div class="gold-rule"></div>
+
+    <div class="zara-intro-block">
+      <div>
+        <p style="font-size:1.05rem; color:var(--text-mid); line-height:1.75; margin-bottom:18px;">
+          Zara — oggi <em>Zadar</em>, in Croazia — fu per secoli una città di frontiera sull'Adriatico orientale, plasmata da dominazioni diverse, da una stratificazione culturale straordinaria e da vicende che la resero protagonista e al tempo stesso vittima della storia europea. La sua storia è inseparabile dall'esodo giuliano dalmata.
+        </p>
+        <p style="font-size:1.05rem; color:var(--text-mid); line-height:1.75;">
+          Attraverso cinque grandi periodi — le origini della città, la dominazione veneziana, l'era asburgica, il Novecento italiano e la guerra — ripercorriamo le trasformazioni di questa città simbolo.
+        </p>
+      </div>
+      <blockquote class="zara-pullquote">
+        «Zara fu il capoluogo della Dalmazia per quasi un millennio. La sua storia è la storia di un crocevia di civiltà.»
+        <cite>— Profilo storico della città</cite>
+      </blockquote>
+    </div>
+    <!-- BLOCCO MAPPA — sostituisce tutto il precedente map-interactive-block -->
+<div class="map-interactive-block">
+  <div class="map-interactive-header">
+    <span class="section-label">Approfondimento cartografico</span>
+    <h3>I confini che cambiano: l'Adriatico orientale nel tempo</h3>
+    <p>
+      Ogni epoca della storia di Zara corrisponde a una diversa configurazione
+      geopolitica dell'Adriatico orientale. Clicca su un periodo per aprire
+      la pagina Wikipedia con le mappe storiche originali e gli approfondimenti.
+    </p>
+  </div>
+
+  <div class="map-buttons">
+
+    <a href="https://it.wikipedia.org/wiki/Provincia_romana_di_Dalmazia"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">I sec. a.C.</span>
+      <span class="map-btn-label">Dalmazia romana</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Ducato_di_Dalmazia"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">VII — XI sec.</span>
+      <span class="map-btn-label">Dalmazia bizantina</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Quarta_crociata"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">1202</span>
+      <span class="map-btn-label">Quarta crociata e Zara</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Dalmazia_veneziana"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">1409 — 1797</span>
+      <span class="map-btn-label">Dominio veneziano</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Regno_di_Dalmazia"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">1797 — 1918</span>
+      <span class="map-btn-label">Impero asburgico</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Governatorato_della_Dalmazia"
+       target="_blank" rel="noopener" class="map-btn">
+      <span class="map-btn-year">1920 — 1943</span>
+      <span class="map-btn-label">Zara italiana</span>
+    </a>
+
+    <a href="https://it.wikipedia.org/wiki/Esodo_giuliano-dalmata"
+       target="_blank" rel="noopener" class="map-btn map-btn-highlight">
+      <span class="map-btn-year">1943 — 1947</span>
+      <span class="map-btn-label">L'esodo — Trattato di Parigi</span>
+    </a>
+
+  </div>
+
+  <p class="map-credit">
+    Fonte: 
+    <a href="https://it.wikipedia.org" target="_blank" rel="noopener" style="color:var(--gold);">
+      Wikipedia — Enciclopedia libera
+    </a>
+    · Le pagine contengono mappe storiche, fonti e approfondimenti verificati
+  </p>
+</div>
+
+    <!-- ========== MASTER TIMELINE ========== -->
+    <div class="master-timeline" role="list">
+
+        <!-- ERA 0: ORIGINI — IX sec. a.C. → 1107 -->
+<div class="era-block" role="listitem">
+  <div class="era-header" id="era-origini-toggle" tabindex="0" aria-expanded="false" aria-controls="era-origini-content">
+    <div class="era-badge origini">IX sec<br>a.C.–<br>1107</div>
+    <div class="era-title-group">
+      <h3>Le Origini di Zara</h3>
+      <span class="era-years">IX secolo a.C. — 1107 d.C.</span>
+    </div>
+    <div class="era-toggle-icon" aria-hidden="true">▾</div>
+  </div>
+  <div class="era-content" id="era-origini-content">
+
+    <div class="era-event">
+      <div class="era-event-date">IX secolo a.C.</div>
+      <h4>La fondazione liburnea — Idassa</h4>
+      <p>
+        I <strong>Liburni</strong>, antica tribù illirica di abili navigatori e mercanti, fondarono nel luogo dell'odierna Zara un avamposto strategico su una piccola isola di pietra collegata alla terraferma da un istmo — una posizione naturalmente difendibile. I Greci ribattezzarono l'insediamento <em>Idassa</em> (Ίδασσα), trascrizione del nome liburniano originale. Già dal VII secolo a.C. la città era un importante polo commerciale con Fenici, Etruschi e Greci, e faceva parte della <strong>tetradekapolis liburniana</strong>, la confederazione dei quattordici comuni che dominava l'Adriatico orientale.
+      </p>
+    </div>
+
+    <div class="era-event">
+      <div class="era-event-date">384 a.C.</div>
+      <h4>I Liburni di Zara nella politica adriatica</h4>
+      <p>
+        Gli <em>Iadasinoi</em> — gli abitanti di Zara — vengono menzionati per la prima volta come alleati degli isolani di Hvar e leader di una coalizione adriatica orientale contro i colonizzatori greci. Un precoce segno del ruolo politico e militare che la città avrebbe mantenuto per secoli.
+      </p>
+    </div>
+
+    <div class="era-event">
+      <div class="era-event-date">59 a.C.</div>
+      <h4>Iadera — La città diventa municipio romano</h4>
+      <p>
+        A partire dalla metà del II secolo a.C. Roma inizia a penetrare nella regione. I Liburni, rimasti in larga parte neutrali durante le guerre romano-illiriche per proteggere i propri traffici marittimi, si integrano gradualmente nel mondo romano. Nel <strong>59 a.C.</strong>, con l'assegnazione dell'Illirico a <strong>Giulio Cesare</strong>, Iadera diventa <em>municipium</em> romano; fedele a Cesare durante la guerra civile contro Pompeo, la città è probabilmente elevata già allora al rango di <strong>Colonia Iulia Iadera</strong>. In epoca augustea si consolida con mura, acquedotti, il <strong>Foro</strong> (fondato dall'imperatore Augusto), anfiteatro e terme, e diventa uno dei centri più prosperi della provincia romana di Dalmatia.
+      </p>
+    </div>
+
+    <div class="era-event">
+      <div class="era-event-date">476 d.C. — IX secolo</div>
+      <h4>Capitale della Dalmazia bizantina</h4>
+      <p>
+        Dopo la caduta dell'Impero Romano d'Occidente (476 d.C.) e la distruzione di <strong>Salona</strong> — l'antica capitale dalmata — ad opera di Avari e Croati agli inizi del VII secolo, Zara diventa la <strong>capitale della provincia bizantina della Dalmazia</strong>. La città funge da rifugio per i Dalmati romanizzati in fuga dall'entroterra croatizzato, mantenendo intatto il suo carattere latino e la fedeltà a Bisanzio. In questo periodo vengono erette importanti chiese paleocristiane e bizantine: nell'<strong>811</strong>, il vescovo Donato ottiene dall'imperatore Niceforo I le reliquie di Sant'Anastasia di Sirmio. La <strong>Chiesa di San Donato</strong>, costruita in quegli anni, è ancora oggi il monumento bizantino meglio conservato della Croazia.
+      </p>
+    </div>
+
+    <div class="era-event">
+      <div class="era-event-date">VII — XI secolo</div>
+      <h4>Tra Bisanzio, Franchi e Croati</h4>
+      <p>
+        Per oltre tre secoli il controllo di Zara è conteso da Goti, Franchi e Croati. Nel primo IX secolo i <strong>Franchi</strong> conquistano la città, ma il <strong>Trattato di Aquisgrana</strong> (812) la restituisce a Bisanzio. Nei secoli X–XI la città conosce l'influenza dei governatori croati pur mantenendo un carattere cosmopolita — latini, slavi e greci convivono in essa. Dal <strong>1105</strong>, con il riconoscimento dell'amministrazione del re ungaro-croato <strong>Colomano</strong>, Zara ottiene lo statuto di <em>libero Comune</em> sotto la protezione della corona ungaro-croata, godendo di notevole autonomia. È anche l'inizio della lunga contesa con <strong>Venezia</strong>, che alterna periodi di dominio diretto (1111–1154, 1160–1183) a momenti di indipendenza o controllo ungaro-croato.
+      </p>
+    </div>
+
+    <div class="era-event">
+      <div class="era-event-date">1202</div>
+      <h4>La Quarta Crociata e l'assedio di Zara</h4>
+      <p>
+        Nel <strong>1202</strong> Zara è teatro di uno degli episodi più controversi della storia medievale. I crociati diretti in Terra Santa, incapaci di pagare il trasporto concordato con Venezia (85.000 marchi d'argento), accettano la proposta del doge <strong>Enrico Dandolo</strong>: aiutare Venezia a riconquistare Zara — ribelle dal 1183, sotto protezione ungara — in cambio del passaggio. Nonostante Zara fosse una <em>città cattolica</em> e Papa Innocenzo III avesse esplicitamente proibito l'attacco, il 23 novembre 1202, dopo cinque giorni di assedio, la città cede. Il Papa scomunica l'intera crociata e Venezia. Nel corso del XIII–XIV secolo Zara si ribella più volte; con il <strong>Trattato di Zadar del 1358</strong> torna al governo ungaro-croato di Luigi I. Nel <strong>1409</strong>, infine, Ladislao di Napoli cede Zara e l'intera Dalmazia a Venezia per 100.000 ducati: ha inizio il lungo dominio veneziano.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+      <!-- ERA 1: VENEZIANA -->
+      <div class="era-block" role="listitem">
+        <div class="era-header" id="era-venezia-toggle" tabindex="0" aria-expanded="false" aria-controls="era-venezia-content">
+          <div class="era-badge veneziana">1107<br>–<br>1797</div>
+          <div class="era-title-group">
+            <h3>Zara Veneziana</h3>
+            <span class="era-years">1107 — 1797</span>
+          </div>
+          <div class="era-toggle-icon" aria-hidden="true">▾</div>
+        </div>
+        <div class="era-content" id="era-venezia-content">
+          <div class="era-event">
+            <div class="era-event-date">1107</div>
+            <h4>La contesa con l'Ungheria</h4>
+            <p>Il regno d'Ungheria inizia ad esercitare pressione sulla Dalmazia, includendo Zara tra le città costiere ambite. La città si trova stretta tra l'influenza ungherese e le mire marittime di Venezia.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">XII secolo</div>
+            <h4>Alternanza di domini</h4>
+            <p>Nel corso del XII secolo Zara conosce una fase di alternanza tra il controllo ungherese e quello veneziano. Le élite cittadine oscillano tra le due potenze, cercando di difendere privilegi e autonomia municipale.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1202</div>
+            <h4>La Quarta Crociata e l'assedio di Zara</h4>
+            <p>I crociati, deviati da Venezia dai loro obiettivi originari, assediano e conquistano Zara. La città viene saccheggiata: è un episodio emblematico del cinismo politico veneziano.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1345–1346</div>
+            <h4>Grande assedio di Zara</h4>
+            <p>Una delle più celebri resistenze della città: Zara, appoggiata dal re d'Ungheria, si ribella al dominio veneziano. L'assedio è lungo e sanguinoso; alla fine Venezia riconquista la città.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1409</div>
+            <h4>La definitiva affermazione veneziana</h4>
+            <p>Con la vendita dei diritti ungheresi sulla Dalmazia, Venezia ottiene il riconoscimento formale del proprio dominio su Zara. Ha inizio una lunga stagione di pace relativa e prosperità culturale.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">XV–XVIII secolo</div>
+            <h4>Città della Serenissima</h4>
+            <p>L'assetto urbano di Zara si modella progressivamente sul modello veneziano: calli, campielli, porte monumentali decorate col leone di San Marco. Il dialetto veneziano si intreccia con le parlate locali.</p>
+            <div class="caratteri-grid" style="margin-top:14px;">
+              <div class="car-card"><h5>Commercio</h5><p>Nodo fondamentale delle rotte adriatiche, Zara permetteva a Venezia di controllare traffici e scambi.</p></div>
+              <div class="car-card"><h5>Geografia</h5><p>La posizione protetta e protesa nel mare la rendeva un porto naturale perfetto.</p></div>
+              <div class="car-card"><h5>Simboli</h5><p>Leoni marciani, porte monumentali e palazzi: la città parlava la lingua della Serenissima.</p></div>
+            </div>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1797</div>
+            <h4>Trattato di Campoformio</h4>
+            <p>Con il trattato di Campoformio, Napoleone cede i territori veneziani all'Impero asburgico. Si chiude così il lungo capitolo del dominio veneziano su Zara, durato quasi quattro secoli.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 2: ASBURGICA -->
+      <div class="era-block" role="listitem">
+        <div class="era-header" id="era-asburgo-toggle" tabindex="0" aria-expanded="false" aria-controls="era-asburgo-content">
+          <div class="era-badge asburgica">1797<br>–<br>1918</div>
+          <div class="era-title-group">
+            <h3>La Zara Asburgica</h3>
+            <span class="era-years">1797 — 1918</span>
+          </div>
+          <div class="era-toggle-icon" aria-hidden="true">▾</div>
+        </div>
+        <div class="era-content" id="era-asburgo-content">
+          <div class="era-event">
+            <div class="era-event-date">1797</div>
+            <h4>Passaggio all'Impero asburgico</h4>
+            <p>Con il Trattato di Campoformio, Zara passa dalla Repubblica di Venezia all'Impero asburgico, diventando parte dei domini austriaci lungo l'Adriatico orientale. L'amministrazione cerca di integrare le strutture veneziane nel nuovo quadro imperiale, mantenendo il ruolo di capoluogo della Dalmazia.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1808–1809</div>
+            <h4>Le Province Illiriche napoleoniche</h4>
+            <p>In seguito alle guerre napoleoniche, Zara entra nell'orbita delle Province Illiriche controllate dalla Francia. Le riforme francesi introducono nuovi codici amministrativi e giuridici, lasciando tracce durature nella cultura urbana.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1815</div>
+            <h4>Il Congresso di Vienna</h4>
+            <p>Il Congresso di Vienna ristabilisce il controllo asburgico sulla Dalmazia: Zara torna capitale provinciale dell'Impero. L'amministrazione austriaca avvia una fase di riorganizzazione istituzionale, rafforzando la presenza militare e burocratica.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1848</div>
+            <h4>Le rivoluzioni e le tensioni nazionali</h4>
+            <p>Le rivoluzioni del 1848 scuotono l'Impero: anche a Zara si avvertono tensioni tra le diverse comunità nazionali. Il governo imperiale rafforza il controllo sulla Dalmazia, mentre emergono nuove forme di partecipazione politica e identitaria.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1861</div>
+            <h4>Il Parlamento dalmata</h4>
+            <p>Con l'introduzione del Parlamento dalmata, Zara diventa uno dei principali palcoscenici del confronto politico tra autonomisti italiani e nazionali croati. La città assume un ruolo simbolico nella definizione dell'identità della Dalmazia all'interno dell'Impero.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1880</div>
+            <h4>La modernizzazione asburgica</h4>
+            <p>Nuovi edifici pubblici, infrastrutture portuali e collegamenti marittimi rafforzano il ruolo commerciale di Zara. La città vive una stagione di vivace vita culturale, con giornali, associazioni e scuole di diversa lingua.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1910–1918</div>
+            <h4>Vigilia e fine della Grande Guerra</h4>
+            <p>Alla vigilia della Grande Guerra, Zara è un centro amministrativo e militare strategico dell'Impero austro-ungarico sull'Adriatico. Il crollo dell'Impero nel 1918 segna la fine della "Zara asburgica" e apre la città a nuove rivendicazioni italiane e jugoslave.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 3: NOVECENTO -->
+      <div class="era-block" role="listitem">
+        <div class="era-header" id="era-novecento-toggle" tabindex="0" aria-expanded="false" aria-controls="era-novecento-content">
+          <div class="era-badge novecento">1918<br>–<br>1943</div>
+          <div class="era-title-group">
+            <h3>Zara Italiana e il Novecento</h3>
+            <span class="era-years">1918 — 1943</span>
+          </div>
+          <div class="era-toggle-icon" aria-hidden="true">▾</div>
+        </div>
+        <div class="era-content" id="era-novecento-content">
+          <div class="era-event">
+            <div class="era-event-date">1918–1920</div>
+            <h4>Zara annessa all'Italia</h4>
+            <p>Con la fine della Prima guerra mondiale, Zara viene annessa al Regno d'Italia. La città diventa un simbolo delle rivendicazioni italiane sull'Adriatico orientale, in un contesto geopolitico profondamente instabile.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">13 luglio 1920</div>
+            <h4>Incendio del Narodni dom</h4>
+            <p>Il Narodni dom, centro culturale e sociale della comunità slava, viene dato alle fiamme. L'incendio colpisce non solo un edificio ma un simbolo della presenza culturale slava in città, segnando un punto di rottura nella convivenza tra le diverse comunità.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1920–1923</div>
+            <h4>Il «fascismo di confine»</h4>
+            <p>Il periodo definito "fascismo di confine" è caratterizzato da violenza politica, intimidazioni e scontri tra nazionalisti italiani e organizzazioni slave. Le tensioni nazionali alimentano una spirale di sopraffazione che anticipa le politiche fasciste degli anni successivi.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1920–1925</div>
+            <h4>Fase di italianizzazione e primo esodo slavo</h4>
+            <p>Le autorità italiane avviano politiche di assimilazione forzata: imposizione dell'italiano nelle scuole e negli uffici, limitazioni alle associazioni culturali slave, pressione su giornali e istituzioni. Come conseguenza, molte famiglie slave abbandonano la città verso la neonata Jugoslavia o verso l'estero.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERA 4: GUERRA E DOPOGUERRA -->
+      <div class="era-block" role="listitem">
+        <div class="era-header" id="era-guerra-toggle" tabindex="0" aria-expanded="false" aria-controls="era-guerra-content">
+          <div class="era-badge guerra">1943<br>–<br>1975</div>
+          <div class="era-title-group">
+            <h3>La Guerra e il Dopoguerra</h3>
+            <span class="era-years">1943 — 1975</span>
+          </div>
+          <div class="era-toggle-icon" aria-hidden="true">▾</div>
+        </div>
+        <div class="era-content" id="era-guerra-content">
+          <div class="era-event">
+            <div class="era-event-date">8 settembre 1943</div>
+            <h4>Armistizio e collasso dell'ordine</h4>
+            <p>L'annuncio dell'armistizio tra l'Italia e gli Alleati provoca il collasso dell'ordine militare e amministrativo nelle zone occupate e contese, inclusa la Dalmazia. A Zara si apre una fase di incertezza, abbandoni e violenze che influenzano gli eventi successivi.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">2 nov. 1943 – 1944</div>
+            <h4>I bombardamenti aerei e la distruzione della città</h4>
+            <p>A partire dal 2 novembre 1943 la città è ripetutamente colpita da raid aerei alleati. I bombardamenti causano danni estesi alle infrastrutture e un alto numero di vittime civili, contribuendo alla quasi totale distruzione del centro storico. Si calcola che Zara subisca oltre 50 incursioni aeree.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1944–1947</div>
+            <h4>L'esodo della popolazione italiana</h4>
+            <p>Con l'occupazione partigiana jugoslava, la quasi totalità della popolazione italiana di Zara — circa 20.000 persone — lascia la città. L'esodo avviene in condizioni drammatiche: la gente abbandona case, averi, sepolture. Zara perde la sua identità italiana secolare nel giro di pochi mesi.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1947</div>
+            <h4>Il Trattato di Parigi</h4>
+            <p>Nel 1947 il Trattato di Parigi assegna formalmente Zara (Zadar) alla Yugoslavia. La città appare nelle fotografie e nei resoconti come una realtà profondamente trasformata: macerie, perdita del patrimonio urbano, cambiamenti demografici e amministrativi radicali.</p>
+          </div>
+          <div class="era-event">
+            <div class="era-event-date">1947–1975</div>
+            <h4>Consolidamento della nuova realtà</h4>
+            <p>Il periodo 1947–1975 è segnato dal consolidamento delle nuove realtà politiche e sociali nella regione, all'interno della Yugoslavia di Tito. La memoria degli eventi bellici e dell'esodo resta centrale nella storia delle comunità di esuli, radicate in tutta Italia e nel mondo.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- / master-timeline -->
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 3 — IL VIAGGIO
+     ================================================================ -->
+<section id="viaggio" class="dark-section" aria-labelledby="viaggio-title">
+  <div class="container">
+    <span class="section-label">Il nostro percorso</span>
+    <h2 class="section-title" id="viaggio-title">Il Nostro<br><em>Viaggio di Istruzione</em></h2>
+    <div class="gold-rule"></div>
+
+    <div class="trip-intro">
+      <div>
+        <p style="font-size:1.05rem; color:rgba(255,255,255,0.8); line-height:1.75;">
+          In occasione del Giorno del Ricordo, la classe 3E ha intrapreso un <em>viaggio della memoria</em> attraverso luoghi simbolo dell'esodo giuliano dalmata: dal museo M9 alle foiba di Basovizza, dal porto di Trieste alla città di Zara. Un percorso di conoscenza diretta, emotiva e storica.
+        </p>
+      </div>
+      <!-- MyMaps link -->
+      <a href="https://www.google.com/maps/d/u/0/viewer?mid=1TS3rxI-8FerPTP5N5R319BQOAFjOspE&hl=it&ll=1.2722218725854067e-14%2C0&z=17" class="trip-map-link" target="_blank" rel="noopener" aria-label="Apri l'itinerario su Google My Maps">
+        <div class="map-icon-wrap">🗺️</div>
+        <div>
+          <strong>Apri l'itinerario interattivo</strong>
+          <span>Visualizza su Google My Maps →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps-grid" role="list">
+      <div class="step-card" role="listitem">
+        <span class="step-num">01</span>
+        <p class="step-city">Mestre</p>
+        <h4>Museo del '900 — Fondazione M9</h4>
+        <p>Visita al museo del Novecento per contestualizzare storicamente gli eventi legati all'esodo nel quadro della storia italiana ed europea del XX secolo.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">02</span>
+        <p class="step-city">Padriciano (TS)</p>
+        <h4>Centro Raccolta Profughi di Padriciano</h4>
+        <p>Visita al centro che accolse migliaia di esuli giuliani e dalmati nel dopoguerra. Un luogo di transizione e di dolore, fondamentale per comprendere le condizioni vissute dai rifugiati.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">03</span>
+        <p class="step-city">Basovizza (TS)</p>
+        <h4>Foiba di Basovizza</h4>
+        <p>Monumento Nazionale. Luogo simbolo delle stragi delle foibe, dove furono gettati centinaia di italiani e oppositori durante e dopo la Seconda guerra mondiale.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">04</span>
+        <p class="step-city">Trieste</p>
+        <h4>Magazzino 26</h4>
+        <p>Il Magazzino 26 del Porto Vecchio di Trieste custodisce la memoria degli esuli: fu il punto di arrivo di molti profughi giuliano-dalmati che sbarcavano nella città con il solo bagaglio della propria storia.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">05</span>
+        <p class="step-city">Fiume / Rijeka</p>
+        <h4>Comunità Italiana — Palazzo Modello</h4>
+        <p>Incontro con la Comunità Italiana di Fiume, che ancora oggi preserva la lingua, la cultura e la memoria delle famiglie italiane rimaste o tornate dopo l'esodo.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">06</span>
+        <p class="step-city">Fiume / Rijeka</p>
+        <h4>Teatro Italiano — Talijanska Drama HNK</h4>
+        <p>Il teatro italiano di Fiume è uno dei simboli viventi della presenza culturale italiana in questa città di confine, oggi croata ma storicamente crocevia di identità.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">07</span>
+        <p class="step-city">Zara / Zadar</p>
+        <h4>Zara — Città simbolo</h4>
+        <p>Arrivo nella città che ha ispirato l'intero progetto: quasi totalmente abitata da italiani per secoli, fu svuotata dall'esodo del 1944–47. Oggi è una vivace città croata.</p>
+      </div>
+      <div class="step-card" role="listitem">
+        <span class="step-num">08</span>
+        <p class="step-city">Zara / Zadar</p>
+        <h4>Visita guidata della città</h4>
+        <p>Un percorso tra le piazze, le chiese e le strade di Zara per riconoscere le tracce della presenza veneziana e italiana: il Foro romano, la chiesa di San Donato, la Porta di Terra Ferma.</p>
+      </div>
+    </div>
+
+    <!-- Photo carousel -->
+    <div class="trip-carousel-wrap">
+      <h3>📸 Le nostre fotografie</h3>
+      <div class="photo-carousel" role="list" aria-label="Foto del viaggio">
+        <!-- Sostituisci i photo-slot con tag <img src="..." alt="..."> dentro .photo-slot -->
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="mestre_M9.jpeg"</span><span>Foto di gruppo al museo M9 di Mestre</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="padriciano_esterno.jpg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="padriciano_interno.jpg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="fiume_teatro.jpeg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="fiume_centro.jpg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="zara_foro.jpg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="zara_gruppochiesa.jpg"</span><span>Inserisci foto</span></div>
+        <div class="photo-slot" role="listitem"><span class="photo-slot-icon"><img src="zara_gruppofinale.jpeg"</span><span>Inserisci foto</span></div>
+      </div>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.35); font-family:'Josefin Sans',sans-serif; letter-spacing:0.1em; text-transform:uppercase; margin-top:12px;">
+        ← Scorri per vedere altre foto
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 4 — RIFLESSIONI & PRODOTTI
+     ================================================================ -->
+<section id="riflessioni" class="cream-section" aria-labelledby="riflessioni-title">
+  <div class="container">
+    <span class="section-label">Dopo il viaggio</span>
+    <h2 class="section-title" id="riflessioni-title">Riflessioni e<br><em>Prodotti Realizzati</em></h2>
+    <div class="gold-rule"></div>
+
+    <p class="section-intro">
+      Il viaggio non finisce con il rientro a scuola. Questa sezione raccoglie le riflessioni maturate dalla classe 3E e i lavori prodotti come restituzione del percorso formativo.
+    </p>
+
+    <!-- Reflection cards -->
+    <div class="reflections-grid">
+      <div class="reflection-card card-crimson">
+        <h3>💭 Riflessioni della classe</h3>
+        <p>
+          Questo viaggio ci ha permesso di toccare con mano — non solo di studiare sui libri — una pagina di storia che per decenni è rimasta nell'ombra. La visita alla Foiba di Basovizza ci ha colpito profondamente: il silenzio di quel luogo dice più di mille parole. A Zara abbiamo camminato tra le strade di una città che "parla" ancora veneziano nell'architettura, ma ha perso la sua comunità italiana nel giro di pochi anni.
+        </p>
+        <p style="margin-top:12px;">
+          <!-- Aggiungere ulteriori riflessioni degli studenti -->
+          <em>[Aggiungi altre riflessioni degli studenti qui]</em>
+        </p>
+      </div>
+      <div class="reflection-card card-navy">
+        <h3>✍️ Cosa abbiamo imparato</h3>
+        <p>
+          Il concetto di "confine" — geografico, linguistico, identitario — si è rivelato il filo conduttore del nostro viaggio. Abbiamo imparato che la memoria non è un fatto solo del passato: le comunità degli esuli mantengono viva una cultura, una lingua, un'identità che rischiava di essere dimenticata. Comprendere questa storia significa capire l'Europa di oggi.
+        </p>
+        <p style="margin-top:12px;">
+          <em>[Aggiungi altre considerazioni qui]</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Podcast -->
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--navy); margin:40px 0 8px;">
+      🎙️ Il nostro podcast
+    </h3>
+    <p style="color:var(--text-mid); font-size:0.96rem; margin-bottom:6px;">
+      Prodotto per la radio della scuola, il podcast, narrato da una voce generata dall’IA a partire dai documenti della redazione, conduce in un viaggio sperimentale e immersivo attraverso i luoghi simbolo dell’Adriatico orientale, intrecciando storia, memoria e identità. Tra testimonianze silenziose, spazi carichi di significato e riflessioni sul passato e sul presente, il racconto ripercorre le tracce dell’esodo giuliano-dalmata, trasformandosi in un ponte tra ciò che è stato e ciò che continua a vivere.
+          </p>
+    <!-- Sostituisci href="#" con il link reale Spotify -->
+    <a href="https://open.spotify.com/episode/48pebVp7RInbHYrBwZTeBV?si=kZjmSsNEQbW-smgnMIzItw" class="podcast-embed" target="_blank" rel="noopener" aria-label="Ascolta il podcast su Spotify">
+      <div class="spotify-logo">🎧</div>
+      <div class="podcast-info">
+        <strong>Il Viaggio del Ricordo — Podcast della classe 3E</strong>
+        <span>Dalle Foibe al Teatro: Viaggio del Ricordo · Radio Stelling · Spotify</span>
+      </div>
+      <div class="podcast-badge">Ascolta</div>
+    </a>
+
+    <!-- Newspaper -->
+    <div class="newspaper-section">
+      <h3>📰 L'articolo sul giornale di Fiume</h3>
+      <p style="color:var(--text-mid); font-size:0.96rem; margin-bottom:20px;">
+        Durante la tappa fiumana del “Viaggio del ricordo”, la classe 3E del nostro Liceo è stata protagonista di un articolo pubblicato dal quotidiano italiano locale, a testimonianza dell’incontro con la Comunità degli Italiani e del dialogo con i giornalisti. L’esperienza, vissuta tra il Salone delle Feste di Palazzo Modello e il Teatro Nazionale Croato “Ivan de Zajc”, ha offerto uno sguardo concreto sulla realtà della minoranza italiana a Fiume. Di seguito gli screenshot dell’articolo.
+      </p>
+      <!-- Articolo principale orizzontale -->
+<div class="newspaper-article-main">
+  <img src="vocedelpopolo_primopiano.png" alt="Articolo La Voce del Popolo — Viaggio del ricordo nei luoghi dell'esodo" />
+  <p class="newspaper-article-caption">«Viaggio del ricordo» nei luoghi dell'esodo — <em>La Voce del Popolo</em></p>
+</div>
+
+<!-- Slot per eventuali screenshot aggiuntivi verticali -->
+<div class="newspaper-grid" style="margin-top: 18px;">
+  <div class="newspaper-slot">
+    <span class="newspaper-slot-icon"><img src="vocedelpopolo_primapagina.jpg"</span>
+    <span>Prima pagina del quotidiano, con l'anteprima dell'articolo in basso</span>
+  </div>
+  <div class="newspaper-slot">
+    <span class="newspaper-slot-icon"><img src="vocedelpopolo_articolo.jpg"</span>
+    <span>In alto, l'articolo a noi dedicato</span>
+  </div>
+  <div class="newspaper-slot">
+    <span class="newspaper-slot-icon"><img src="vocedelpopolo_online.png"</span>
+    <span>In alto, l'articolo a noi dedicato</span>
+  </div>
+</div>
+     
+  </div>
+</section>
+
+<section id="glossario" class="cream-dark-section" aria-labelledby="glossario-title">
+  <div class="container">
+    <span class="section-label">Lessico storico</span>
+    <h2 class="section-title" id="glossario-title">Glossario<br><em>dei termini chiave</em></h2>
+    <div class="gold-rule"></div>
+    <p class="section-intro">
+      Le parole della storia hanno un peso preciso. Questo glossario raccoglie i termini fondamentali per comprendere le vicende del confine orientale, organizzati per tema.
+    </p>
+
+    <p class="glos-hint-main">Clicca su una voce per leggere la definizione.</p>
+
+    <!-- GRUPPO 1 -->
+    <div class="glos-group">
+      <div class="glos-group-label">Luoghi e confini</div>
+      <div class="glos-grid">
+
+        <div class="glos-card glos-blue" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Foiba</div>
+          <div class="glos-etimo">dal friulano foibe, lat. fovea — fossa, cavità</div>
+          <div class="glos-def">
+            <p>Termine che indica le cavità naturali carsiche presenti soprattutto in Istria e nel Carso triestino. Durante e dopo la Seconda guerra mondiale, tra il 1943 e il 1945, queste cavità furono utilizzate dai partigiani jugoslavi di Tito per occultare i corpi delle vittime di esecuzioni di massa.</p>
+            <p>La più nota è la <strong>Foiba di Basovizza</strong>, vicino a Trieste, oggi Monumento Nazionale, visitata dalla classe 3E durante il viaggio del ricordo.</p>
+            <span class="glos-ref">→ vedi sezione Il nostro viaggio</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-blue" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Confine orientale</div>
+          <div class="glos-etimo">espressione geografica e storica italiana</div>
+          <div class="glos-def">
+            <p>Il confine nord-orientale dell'Italia, ovvero la zona di frontiera tra l'Italia e la ex Jugoslavia (oggi Slovenia e Croazia), comprendente la Venezia Giulia, l'Istria, Fiume e la Dalmazia. Per secoli queste terre videro la convivenza di popolazioni italiane, slave e tedesche.</p>
+            <p>La complessità di questa frontiera — geografica, linguistica e identitaria — è il filo conduttore del nostro intero progetto.</p>
+          </div>
+        </div>
+
+        <div class="glos-card glos-blue" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Zona A e Zona B</div>
+          <div class="glos-etimo">nomenclatura del diritto internazionale postbellico</div>
+          <div class="glos-def">
+            <p>Dopo il Trattato di Parigi del 1947, il Territorio Libero di Trieste fu diviso in due zone di occupazione militare. La <strong>Zona A</strong>, comprendente Trieste e dintorni, fu amministrata dagli Anglo-Americani; la <strong>Zona B</strong>, corrispondente all'Istria settentrionale, fu amministrata dalla Jugoslavia.</p>
+            <p>Con il Memorandum di Londra del 1954 la Zona A passò definitivamente all'Italia e la Zona B alla Jugoslavia, provocando un'ulteriore ondata di esodi.</p>
+            <span class="glos-ref">→ vedi Memorandum di Londra</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-blue" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Territorio Libero di Trieste</div>
+          <div class="glos-etimo">status internazionale istituito dal Trattato di Parigi, 1947</div>
+          <div class="glos-def">
+            <p>Stato-cuscinetto internazionale istituito dal Trattato di Parigi del 10 febbraio 1947, sotto la garanzia del Consiglio di Sicurezza dell'ONU. Trieste non apparteneva né all'Italia né alla Jugoslavia, in una condizione anomala durata fino al 1954.</p>
+            <p>Durante questi sette anni, molti istriani e dalmati italiani transitarono per Trieste come profughi in cerca di sistemazione.</p>
+            <span class="glos-ref">→ vedi Zona A e Zona B</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GRUPPO 2 -->
+    <div class="glos-group">
+      <div class="glos-group-label">Eventi e documenti</div>
+      <div class="glos-grid">
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Esodo</div>
+          <div class="glos-etimo">dal greco éxodos — uscita, partenza</div>
+          <div class="glos-def">
+            <p>L'abbandono forzato delle proprie terre da parte della popolazione italiana dell'Istria, di Fiume e della Dalmazia tra il 1943 e gli anni Sessanta. Circa 350.000 persone lasciarono le proprie case — spesso con pochissimi bagagli — verso un'Italia che non sempre le accolse con calore.</p>
+            <p>È un fenomeno distinto dalla migrazione economica: fu causato dalla paura, dalla violenza e dall'impossibilità di vivere liberamente sotto il regime comunista di Tito.</p>
+            <span class="glos-ref">→ vedi sezione L'esodo giuliano-dalmata</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Infoibamento</div>
+          <div class="glos-etimo">da foiba, con prefisso in– e suffisso verbale</div>
+          <div class="glos-def">
+            <p>Termine che indica specificamente l'atto criminale di uccidere persone e gettarne i corpi nelle foibe. È distinto dal termine "foiba" (il luogo) e descrive il metodo delle esecuzioni di massa perpetrate dalle forze partigiane jugoslave.</p>
+            <p>Il numero delle vittime è ancora oggetto di ricerca storica, ma si stima tra i 5.000 e i 15.000 morti solo nel territorio italiano.</p>
+          </div>
+        </div>
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Italianizzazione</div>
+          <div class="glos-etimo">termine storico-politico del periodo fascista</div>
+          <div class="glos-def">
+            <p>Politica sistematica avviata dal regime fascista negli anni Venti e Trenta nei territori di confine a maggioranza slava. Comportò la sostituzione dei toponimi slavi con quelli italiani, l'obbligo dell'italiano nelle scuole e negli uffici, il divieto di associazioni culturali slave.</p>
+            <p>A Zara questa politica si tradusse nella progressiva espulsione della componente slava della popolazione.</p>
+            <span class="glos-ref">→ vedi sezione Zara nel Novecento</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Trattato di Parigi</div>
+          <div class="glos-etimo">trattato di pace internazionale, 10 febbraio 1947</div>
+          <div class="glos-def">
+            <p>Firmato il 10 febbraio 1947 tra l'Italia e le potenze alleate. L'Italia cedette alla Jugoslavia quasi tutta la Venezia Giulia, l'Istria, Zara e le isole dalmate.</p>
+            <p>Il 10 febbraio — data della firma — è diventato il <em>Giorno del Ricordo</em>. Per gli esuli rappresenta il momento della perdita definitiva delle proprie terre.</p>
+            <span class="glos-ref">→ vedi Giorno del Ricordo</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Memorandum di Londra</div>
+          <div class="glos-etimo">accordo diplomatico, 5 ottobre 1954</div>
+          <div class="glos-def">
+            <p>Accordo firmato il 5 ottobre 1954 che pose fine alla questione del Territorio Libero di Trieste. La Zona A passò definitivamente all'Italia, la Zona B alla Jugoslavia.</p>
+            <p>Provocò una nuova ondata di esodi dalla Zona B. La questione fu definitivamente chiusa solo con il Trattato di Osimo del 1975.</p>
+            <span class="glos-ref">→ vedi Zona A e Zona B</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-gold" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Giorno del Ricordo</div>
+          <div class="glos-etimo">solennità civile nazionale, legge n. 92 del 30 marzo 2004</div>
+          <div class="glos-def">
+            <p>Solennità civile nazionale italiana celebrata ogni anno il <strong>10 febbraio</strong>, istituita dalla legge n. 92 del 2004. È dedicata alla memoria delle vittime delle foibe, dell'esodo giuliano-dalmata e delle vicende del confine orientale.</p>
+            <p>Per decenni questi eventi erano rimasti ai margini della memoria pubblica italiana. Il nostro progetto nasce proprio in questa occasione.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GRUPPO 3 -->
+    <div class="glos-group">
+      <div class="glos-group-label">Persone e comunità</div>
+      <div class="glos-grid">
+
+        <div class="glos-card glos-crimson" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Profugo / esule</div>
+          <div class="glos-etimo">lat. profugus — fuggitivo; lat. exsul — bandito dalla patria</div>
+          <div class="glos-def">
+            <p>I due termini hanno sfumature diverse. Il <em>profugo</em> è chi fugge da una situazione di pericolo immediato. L'<em>esule</em> indica chi è costretto all'esilio permanente dalla patria per ragioni politiche o etniche.</p>
+            <p>Nel caso del confine orientale, le comunità degli esuli sono ancora oggi attive in tutta Italia e custodiscono viva la memoria di queste vicende.</p>
+            <span class="glos-ref">→ vedi sezione Il nostro viaggio</span>
+          </div>
+        </div>
+
+        <div class="glos-card glos-crimson" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Irredentismo</div>
+          <div class="glos-etimo">da "terre irredente", espressione coniata dopo il 1866</div>
+          <div class="glos-def">
+            <p>Movimento politico e culturale nato nell'Italia post-unitaria che rivendicava l'annessione all'Italia delle "terre irredente" — territori a popolazione italiana rimasti fuori dai confini dello Stato italiano, tra cui Trento, Trieste, l'Istria, Fiume e la Dalmazia.</p>
+            <p>Fu una delle forze che portò l'Italia nella Prima guerra mondiale e alimentò le aspettative — in gran parte deluse — della "vittoria mutilata".</p>
+          </div>
+        </div>
+
+        <div class="glos-card glos-crimson" onclick="this.classList.toggle('open')" tabindex="0">
+          <div class="glos-term">Comunità italiana</div>
+          <div class="glos-etimo">termine giuridico e culturale del diritto internazionale</div>
+          <div class="glos-def">
+            <p>Organizzazioni che rappresentano e tutelano i cittadini di lingua e cultura italiana rimasti in Slovenia e Croazia dopo l'esodo. Sono riconosciute giuridicamente e mantengono vive la lingua italiana, le tradizioni e la memoria storica.</p>
+            <p>Durante il nostro viaggio abbiamo incontrato la <em>Comunità Italiana di Palazzo Modello</em> a Fiume: una realtà viva, non solo un museo della memoria.</p>
+            <span class="glos-ref">→ vedi sezione Il nostro viaggio</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer id="footer" aria-labelledby="footer-heading">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Il Viaggio del Ricordo</h3>
+        <p>Un progetto didattico sull'esodo giuliano dalmata e sulla storia di Zara, realizzato in occasione del Giorno del Ricordo — 10 Febbraio.</p>
+        <p style="margin-top:12px;">Progetto presentato al concorso del Ministero dell'Istruzione e del Merito.</p>
+      </div>
+      <div class="footer-col">
+        <h4 id="footer-heading">Realizzato da</h4>
+        <ul>
+          <li><strong style="color:rgba(255,255,255,0.85);">Classe 3E</strong></li>
+          <li style="margin-top:8px;">Coordinato dalla</li>
+          <li><strong style="color:rgba(255,255,255,0.85);">Prof.ssa Ada Barbara Pierotti</strong></li>
+          <li style="margin-top:8px;">Con il contributo della</li>
+          <li><strong style="color:rgba(255,255,255,0.85);">Prof.ssa Anna Passerelli</strong></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="#esodo" style="color:rgba(255,255,255,0.6); text-decoration:none;">L'Esodo Giuliano Dalmata</a></li>
+          <li><a href="#zara-storia" style="color:rgba(255,255,255,0.6); text-decoration:none;">La Storia di Zara</a></li>
+          <li><a href="#viaggio" style="color:rgba(255,255,255,0.6); text-decoration:none;">Il Nostro Viaggio</a></li>
+          <li><a href="#riflessioni" style="color:rgba(255,255,255,0.6); text-decoration:none;">Riflessioni e Prodotti</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025–2026 Classe 3E · Progetto didattico · Giorno del Ricordo</p>
+      <p class="footer-gold">Con gratitudine a tutti coloro che hanno condiviso la propria memoria</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ================================================================
+     JAVASCRIPT
+     ================================================================ -->
+<script>
+/* ── Scrollbar custom — versione fluida con lerp ── */
+document.querySelectorAll('.carousel, .photo-carousel').forEach(carousel => {
+  if (carousel.parentElement.classList.contains('custom-scroll-wrap')) return;
+
+  carousel.style.scrollBehavior = 'auto';
+  carousel.style.overflowX = 'scroll';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'custom-scroll-wrap';
+  carousel.parentNode.insertBefore(wrap, carousel);
+  wrap.appendChild(carousel);
+
+  const track = document.createElement('div');
+  track.className = 'custom-scroll-track';
+  const thumb = document.createElement('div');
+  thumb.className = 'custom-scroll-thumb';
+  track.appendChild(thumb);
+  wrap.appendChild(track);
+
+  /* ── Stato interno ── */
+  let targetScroll  = carousel.scrollLeft;  // dove vogliamo arrivare
+  let currentScroll = carousel.scrollLeft;  // dove siamo interpolati
+  let rafId         = null;
+  let isDraggingThumb  = false;
+  let isDraggingCarousel = false;
+  let dragStartX    = 0;
+  let dragStartScroll = 0;
+  let lastMouseX    = 0;
+  let velocity      = 0;
+
+  const LERP        = 0.10;   // velocità interpolazione (0.05 = lento, 0.18 = scattoso)
+  const FRICTION    = 0.88;   // attrito momentum (0.80 = si ferma presto, 0.95 = lunga inerzia)
+  const DRAG_SPEED  = 1.4;    // moltiplicatore drag sul carosello
+
+  function maxScroll() {
+    return carousel.scrollWidth - carousel.clientWidth;
+  }
+
+  function clamp(val, min, max) {
+    return Math.min(Math.max(val, min), max);
+  }
+
+  /* ── Lerp loop ── */
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
+
+  function tick() {
+    /* Momentum: applica velocità residua al target */
+    if (!isDraggingCarousel && !isDraggingThumb && Math.abs(velocity) > 0.2) {
+      targetScroll = clamp(targetScroll - velocity, 0, maxScroll());
+      velocity *= FRICTION;
+    } else if (!isDraggingCarousel && !isDraggingThumb) {
+      velocity = 0;
+    }
+
+    /* Interpolazione verso il target */
+    currentScroll = lerp(currentScroll, targetScroll, LERP);
+
+    /* Scrive sul DOM solo se c'è differenza apprezzabile */
+    if (Math.abs(currentScroll - carousel.scrollLeft) > 0.1) {
+      carousel.scrollLeft = currentScroll;
+    }
+
+    updateThumb();
+
+    /* Continua il loop finché c'è movimento */
+    const stillMoving =
+      Math.abs(targetScroll - currentScroll) > 0.1 ||
+      Math.abs(velocity) > 0.2;
+
+    if (stillMoving) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function startLoop() {
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  }
+
+  function setTarget(val) {
+    targetScroll = clamp(val, 0, maxScroll());
+    startLoop();
+  }
+
+  /* ── Aggiorna thumb ── */
+  function updateThumb() {
+    const ratio = carousel.clientWidth / carousel.scrollWidth;
+    const pos   = carousel.scrollLeft / carousel.scrollWidth;
+    thumb.style.width = (ratio * 100) + '%';
+    thumb.style.left  = (pos   * 100) + '%';
+  }
+
+  new ResizeObserver(() => {
+    updateThumb();
+    currentScroll = carousel.scrollLeft;
+    targetScroll  = carousel.scrollLeft;
+  }).observe(carousel);
+
+  updateThumb();
+
+  /* ── Scroll nativo (trackpad / rotella) ── */
+  carousel.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    setTarget(targetScroll + delta * 1.2);
+  }, { passive: false });
+
+  /* ── Drag sul carosello (mouse) ── */
+  carousel.addEventListener('mousedown', e => {
+    if (isDraggingThumb) return;
+    isDraggingCarousel = true;
+    dragStartX    = e.clientX;
+    dragStartScroll = targetScroll;
+    lastMouseX    = e.clientX;
+    velocity      = 0;
+    carousel.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDraggingCarousel) return;
+    velocity  = lastMouseX - e.clientX;   // per il momentum al rilascio
+    lastMouseX = e.clientX;
+    const dx  = (e.clientX - dragStartX) * DRAG_SPEED;
+    setTarget(dragStartScroll - dx);
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDraggingCarousel) return;
+    isDraggingCarousel = false;
+    carousel.style.cursor = 'grab';
+    // lascia che il momentum continui nel tick loop
+    startLoop();
+  });
+
+  /* ── Drag sul thumb ── */
+  thumb.addEventListener('mousedown', e => {
+    isDraggingThumb = true;
+    dragStartX      = e.clientX;
+    dragStartScroll = targetScroll;
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDraggingThumb) return;
+    const trackW   = track.clientWidth;
+    const thumbW   = thumb.clientWidth;
+    const draggable = trackW - thumbW;
+    const dx        = e.clientX - dragStartX;
+    const scrollable = maxScroll();
+    setTarget(dragStartScroll + (dx / draggable) * scrollable);
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDraggingThumb) return;
+    isDraggingThumb = false;
+    document.body.style.userSelect = '';
+  });
+
+  /* ── Clic sul track ── */
+  track.addEventListener('click', e => {
+    if (e.target === thumb) return;
+    const rect    = track.getBoundingClientRect();
+    const clickPos = (e.clientX - rect.left) / rect.width;
+    setTarget(clickPos * carousel.scrollWidth - carousel.clientWidth / 2);
+  });
+
+  /* ── Touch (mobile) ── */
+  let touchStartX = 0, touchLastX = 0;
+
+  carousel.addEventListener('touchstart', e => {
+    touchStartX   = e.touches[0].clientX;
+    touchLastX    = touchStartX;
+    velocity      = 0;
+    cancelAnimationFrame(rafId);
+    rafId = null;
+    currentScroll = carousel.scrollLeft;
+    targetScroll  = carousel.scrollLeft;
+  }, { passive: true });
+
+  carousel.addEventListener('touchmove', e => {
+    const x  = e.touches[0].clientX;
+    velocity = touchLastX - x;
+    touchLastX = x;
+    setTarget(targetScroll + velocity);
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', () => {
+    startLoop(); // momentum anche su touch
+  });
+});
+  /* ── Nav toggle ── */
+  const navToggle = document.getElementById('navToggle');
+  const navMenu   = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close on nav link click
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  /* ── Era accordion ── */
+  const eraHeaders = document.querySelectorAll('.era-header');
+  eraHeaders.forEach(header => {
+    header.addEventListener('click', () => toggleEra(header));
+    header.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleEra(header);
+      }
+    });
+  });
+
+  function toggleEra(header) {
+  const isActive = header.classList.contains('active');
+  const contentId = header.getAttribute('aria-controls');
+  const content   = document.getElementById(contentId);
+
+  header.classList.toggle('active', !isActive);
+  header.setAttribute('aria-expanded', String(!isActive));
+  if (content) content.classList.toggle('open', !isActive);
+}
+
+  /* ── Scroll: highlight active nav ── */
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks  = navMenu.querySelectorAll('a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = '';
+          link.style.borderLeftColor = '';
+        });
+        const active = navMenu.querySelector(`a[href="#${entry.target.id}"]`);
+        if (active) {
+          active.style.color = 'var(--gold)';
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => observer.observe(s));
+
+  /* ── Animate cards on scroll ── */
+  const animTargets = document.querySelectorAll('.step-card, .reflection-card, .era-block, .link-card, .stat-item');
+  const fadeObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animTargets.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = `opacity 0.55s ${i * 0.07}s ease, transform 0.55s ${i * 0.07}s ease`;
+    fadeObserver.observe(el);
+  });
+  /* ── Splash screen ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hidden');
+  }, 2400);
+});
+/* ── Glossario — accessibilità tastiera ── */
+document.querySelectorAll('.glos-card').forEach(card => {
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
